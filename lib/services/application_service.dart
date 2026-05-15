@@ -16,7 +16,7 @@ import '../models/application.dart';
 import 'supabase_service.dart';
 
 class ApplicationService {
-  final _client = SupabaseService.instance.client;
+  final _client = SupabaseService.instance.client;   
 
   /// Submit a new module assistance application.
   Future<Map<String, dynamic>> submitApplication({
@@ -112,6 +112,7 @@ class ApplicationService {
     try {
       await _client.from('applications').delete().eq('id', applicationId);
 
+      
       return {
         'success': true,
         'error': null,
@@ -124,3 +125,5 @@ class ApplicationService {
     }
   }
 }
+
+

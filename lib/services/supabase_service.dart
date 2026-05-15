@@ -24,6 +24,8 @@ class SupabaseService {
 
   SupabaseService._();
 
+  
+
   static SupabaseService get instance {
     _instance ??= SupabaseService._();
     return _instance!;
@@ -54,6 +56,7 @@ class SupabaseService {
       // Don't rethrow - allow app to run without Supabase for local testing
     }
   }
+  
 
   /// Get the current authenticated user's ID.
   String? get currentUserId => instance.client.auth.currentUser?.id;
@@ -61,3 +64,5 @@ class SupabaseService {
   /// Get the current authenticated user's email.
   String? get currentUserEmail => instance.client.auth.currentUser?.email;
 }
+
+

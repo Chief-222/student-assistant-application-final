@@ -35,6 +35,7 @@ class AuthService {
         email: email,
         password: password,
       );
+      
 
       if (response.user != null) {
         // Insert student profile into students table
@@ -68,7 +69,7 @@ class AuthService {
   }) async {
     try {
       final response = await _client.auth.signInWithPassword(
-        email: email,
+        email: email,  
         password: password,
       );
 
@@ -87,6 +88,8 @@ class AuthService {
       };
     }
   }
+
+  
 
   /// Sign out the current user.
   Future<void> signOut() async {
@@ -114,6 +117,7 @@ class AuthService {
       return null;
     }
   }
+  
 
   /// Check if user is admin by checking against hardcoded admin emails.
   Future<bool> isAdmin(String email) async {
